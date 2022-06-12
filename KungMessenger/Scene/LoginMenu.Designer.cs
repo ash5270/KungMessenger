@@ -37,7 +37,7 @@
             // 
             // Login_Btn
             // 
-            this.Login_Btn.Location = new System.Drawing.Point(12, 165);
+            this.Login_Btn.Location = new System.Drawing.Point(75, 165);
             this.Login_Btn.Name = "Login_Btn";
             this.Login_Btn.Size = new System.Drawing.Size(223, 29);
             this.Login_Btn.TabIndex = 0;
@@ -50,15 +50,15 @@
             this.panel1.Controls.Add(this.ID_Textbox);
             this.panel1.Controls.Add(this.PW_Textbox);
             this.panel1.Controls.Add(this.Login_Btn);
-            this.panel1.Location = new System.Drawing.Point(65, 145);
+            this.panel1.Location = new System.Drawing.Point(12, 209);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 236);
+            this.panel1.Size = new System.Drawing.Size(357, 331);
             this.panel1.TabIndex = 1;
             // 
             // ID_Textbox
             // 
             this.ID_Textbox.ForeColor = System.Drawing.Color.Silver;
-            this.ID_Textbox.Location = new System.Drawing.Point(12, 99);
+            this.ID_Textbox.Location = new System.Drawing.Point(75, 99);
             this.ID_Textbox.Name = "ID_Textbox";
             this.ID_Textbox.Size = new System.Drawing.Size(223, 27);
             this.ID_Textbox.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             this.PW_Textbox.BackColor = System.Drawing.Color.White;
             this.PW_Textbox.ForeColor = System.Drawing.Color.Silver;
-            this.PW_Textbox.Location = new System.Drawing.Point(12, 132);
+            this.PW_Textbox.Location = new System.Drawing.Point(75, 132);
             this.PW_Textbox.Name = "PW_Textbox";
             this.PW_Textbox.Size = new System.Drawing.Size(223, 27);
             this.PW_Textbox.TabIndex = 1;
