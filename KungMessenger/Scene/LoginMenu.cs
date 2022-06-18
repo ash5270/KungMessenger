@@ -50,12 +50,19 @@ namespace KungMessenger
         {
             MainScene mainScene = new MainScene();
             this.Visible = false;
-            mainScene.Owner = this;
-            mainScene.Show();
 
             LoginData loginData = new LoginData();
             loginData.ID = ID_Textbox.Text;
             loginData.Password = PW_Textbox.Text;
+
+            mainScene.StartClient(loginData.ID, loginData.Password);
+
+            mainScene.Owner = this;
+            mainScene.Show();
+
+       
+
+
 
             Console.WriteLine(loginData.ID,loginData.Password);
         }
