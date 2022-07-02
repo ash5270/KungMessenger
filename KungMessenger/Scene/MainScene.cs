@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using KungMessenger.Network;
+using KungMessenger.Network.Packet;
+
 
 namespace KungMessenger
 {
@@ -26,14 +28,17 @@ namespace KungMessenger
             client = new Client();
             client.Start("127.0.0.1", 3000);
 
-            Network.Buffer buffer = new Network.Buffer();
-            buffer.Write("asdsadsad");
+            LoginPacket loginPacket = new LoginPacket();
+            LoginData loginData = new LoginData();
+            loginData.ID = id;
+            loginData.Password = passwd;
+            loginPacket.LogingData = loginData;
+            loginPacket.Serialize();
             
-            while(true)
+          //  while(true)
             {
-                client.Send(buffer);
+                client.Send(loginPacket.Buffer);
                 Thread.Sleep(50);
-
             }
         }
 

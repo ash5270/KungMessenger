@@ -29,54 +29,23 @@ public class Buffer
     public Buffer(Buffer buffer)
     {
         Data = new byte[buffer.Capctiy];
-        Array.Copy(buffer.Data,0, Data, Offset, buffer.Capctiy);
+        Array.Clear(buffer.Data, 0, buffer.Data.Length); 
         Capctiy = buffer.Capctiy;
         Offset = buffer.Offset;
     }
 
-    public void Write(Int16 data)
+    public bool Write(byte[] bytes,int index)
     {
-        byte[] bytes = BitConverter.GetBytes(data);
-        Array.Copy(bytes, 0, Data, Offset, bytes.Length);
-        Offset += bytes.Length; 
+        Array.Copy(bytes, 0, Data, index, bytes.Length);
+        Offset += bytes.Length;
+        return true;
     }
 
-    public void Write(Int32 data)
+    public bool Write(byte[] bytes)
     {
-        byte[] bytes = BitConverter.GetBytes(data);
-        Array.Copy(bytes, 0, Data, Offset, bytes.Length);
-        Offset += bytes.Length; 
-    }
-
-    public void Write(Int64 data)
-    {
-        byte[] bytes = BitConverter.GetBytes(data);
         Array.Copy(bytes, 0, Data, Offset, bytes.Length);
         Offset += bytes.Length;
-    } 
-
-    public void Write(float data)
-    {
-        byte[] bytes = BitConverter.GetBytes(data);
-        Array.Copy(bytes, 0, Data, Offset, bytes.Length);
-        Offset += bytes.Length;
-    }
-
-    public void Write(double data)
-    {
-        byte[] bytes = BitConverter.GetBytes(data);
-        Array.Copy(bytes,0, Data,Offset, bytes.Length);
-        Offset += bytes.Length;
-    }
-
-    public void Write(string data)
-    {
-        byte[] temp_buffer = Encoding.UTF8.GetBytes(data);
-        Int16 length = (Int16)temp_buffer.Length;
-        Write(length);
-
-        Array.Copy(temp_buffer, Data, temp_buffer.Length);
-        Offset += temp_buffer.Length;
+        return true;
     }
 
     public void Write(Buffer buffer)

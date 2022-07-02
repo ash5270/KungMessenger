@@ -1,5 +1,5 @@
 using System.Diagnostics.Eventing.Reader;
-using KungMessenger.Network;
+using KungMessenger.Network.Packet;
 
 
 namespace KungMessenger

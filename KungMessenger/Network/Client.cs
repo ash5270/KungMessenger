@@ -41,8 +41,8 @@ public class Client
         socket.NoDelay = true;
 
         //buffer create
-        receive_buffer = new Buffer();
-        send_buffer = new Buffer();
+        receive_buffer = new Buffer(65535);
+        send_buffer = new Buffer(65535);
         send_temp_buffer = new Buffer();
 
         //socket async event
@@ -166,8 +166,6 @@ public class Client
             {
                 OnProcessReceive(receive_event);
             }
-   
-            Console.WriteLine("Receive");
         }
         else
         {
@@ -194,7 +192,7 @@ public class Client
         {
             lock (send_lock)
             {
-                if (send_temp_buffer.Offset<=0)
+                if (send_temp_buffer.Offset <= 0)
                 {
                     send_temp_buffer = Interlocked.Exchange(ref send_buffer, send_temp_buffer);
                 }
@@ -219,8 +217,8 @@ public class Client
         }
     }
 
-        public void OnProcessSend(SocketAsyncEventArgs e)
-        {
+    public void OnProcessSend(SocketAsyncEventArgs e)
+    {
         if (!isConnect)
             return;
 
