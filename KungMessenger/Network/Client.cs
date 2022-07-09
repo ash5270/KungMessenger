@@ -9,6 +9,7 @@ public class Client
     private Socket socket;
     private EndPoint endPoint;
 
+    public bool IsConnected { get => isConnect; }
     private bool isConnect;
     private bool isConnecting;
 
@@ -22,6 +23,8 @@ public class Client
     private SocketAsyncEventArgs connect_event;
     private SocketAsyncEventArgs receive_event;
     private SocketAsyncEventArgs send_event;
+
+    public event EventHandler OnConnectingEvent;
 
     public Client()
     {
@@ -139,6 +142,12 @@ public class Client
         }
         else
         {
+            //무한으로 connect 하기 
+            if (!socket.ConnectAsync(connect_event))
+            {
+                OnProcessConnect(connect_event);
+            }
+            OnConnectingEvent.Invoke(this,EventArgs.Empty);
             Console.WriteLine("Connect fail");
         }
     }

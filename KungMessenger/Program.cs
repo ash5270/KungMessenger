@@ -1,3 +1,4 @@
+using KungMessenger.Scene;
 namespace KungMessenger
 {
     internal static class Program

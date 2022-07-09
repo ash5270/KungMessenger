@@ -1,4 +1,4 @@
-﻿namespace KungMessenger
+﻿namespace KungMessenger.Scene
 {
     partial class LoginMenu
     {
@@ -30,6 +30,7 @@
         {
             this.Login_Btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Signup_Btn = new System.Windows.Forms.Button();
             this.ID_Textbox = new System.Windows.Forms.TextBox();
             this.PW_Textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -37,16 +38,18 @@
             // 
             // Login_Btn
             // 
+            this.Login_Btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Login_Btn.Location = new System.Drawing.Point(75, 165);
             this.Login_Btn.Name = "Login_Btn";
             this.Login_Btn.Size = new System.Drawing.Size(223, 29);
             this.Login_Btn.TabIndex = 0;
             this.Login_Btn.Text = "Login";
-            this.Login_Btn.UseVisualStyleBackColor = true;
+            this.Login_Btn.UseVisualStyleBackColor = false;
             this.Login_Btn.Click += new System.EventHandler(this.Login_Btn_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Signup_Btn);
             this.panel1.Controls.Add(this.ID_Textbox);
             this.panel1.Controls.Add(this.PW_Textbox);
             this.panel1.Controls.Add(this.Login_Btn);
@@ -54,6 +57,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 331);
             this.panel1.TabIndex = 1;
+            // 
+            // Signup_Btn
+            // 
+            this.Signup_Btn.Location = new System.Drawing.Point(75, 200);
+            this.Signup_Btn.Name = "Signup_Btn";
+            this.Signup_Btn.Size = new System.Drawing.Size(223, 29);
+            this.Signup_Btn.TabIndex = 3;
+            this.Signup_Btn.Text = "SingUp";
+            this.Signup_Btn.UseVisualStyleBackColor = true;
+            this.Signup_Btn.Click += new System.EventHandler(this.Signup_Btn_Click);
             // 
             // ID_Textbox
             // 
@@ -82,10 +95,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 576);
+            this.ClientSize = new System.Drawing.Size(382, 573);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "LoginMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -99,5 +113,6 @@
         private Panel panel1;
         private TextBox ID_Textbox;
         private TextBox PW_Textbox;
+        private Button Signup_Btn;
     }
 }

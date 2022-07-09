@@ -8,8 +8,8 @@ namespace KungMessenger.Network.Packet
         #region Write
         public bool Write(Buffer buffer, string data, int index) 
         {
-            var stringToBytes = UnicodeEncoding.Unicode.GetBytes(data);
-            if (Write(buffer, data.Length,index))
+            var stringToBytes = Encoding.UTF8.GetBytes(data);
+            if (Write(buffer, (UInt16)data.Length,index))
             {
                 index += sizeof(UInt16);
                 return buffer.Write(stringToBytes,index);
@@ -65,9 +65,9 @@ namespace KungMessenger.Network.Packet
         //no index
         public bool Write(Buffer buffer, string data)
         {
-            var stringToBytes = UnicodeEncoding.Unicode.GetBytes(data);
+            var stringToBytes = Encoding.UTF8.GetBytes(data);
 
-            if (Write(buffer,data.Length))
+            if (Write(buffer,(UInt16)data.Length))
             {
                 return buffer.Write(stringToBytes);
             }

@@ -12,22 +12,20 @@ using KungMessenger.Network;
 using KungMessenger.Network.Packet;
 
 
-namespace KungMessenger
+namespace KungMessenger.Scene
 {
     public partial class MainScene : Form
     {
         private Client client;
 
-        public MainScene()
+        public MainScene(Client client)
         {
             InitializeComponent();
+            this.client = client;   
         }
 
         public void StartClient(string id, string passwd)
         {
-            client = new Client();
-            client.Start("127.0.0.1", 3000);
-
             LoginPacket loginPacket = new LoginPacket();
             LoginData loginData = new LoginData();
             loginData.ID = id;

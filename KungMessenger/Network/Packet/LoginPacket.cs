@@ -25,7 +25,7 @@ namespace KungMessenger.Network.Packet
             //마지막에 사이즈
             bool result = false;
             result= Write(buffer, (UInt16)loginPakcet.ID);
-            result= Write(buffer, size);
+            result= Write(buffer, (UInt16)size);
             result= Write(buffer, data.ID);
             result= Write(buffer, data.Password);
             return result;

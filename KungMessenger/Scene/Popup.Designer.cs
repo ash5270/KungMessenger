@@ -1,6 +1,6 @@
 ﻿namespace KungMessenger.Scene
 {
-    partial class MainScene
+    partial class Popup
     {
         /// <summary>
         /// Required designer variable.
@@ -29,43 +29,45 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.Popup_Textbox = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(7, 7);
+            this.panel1.Controls.Add(this.Popup_Textbox);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(87, 639);
+            this.panel1.Size = new System.Drawing.Size(235, 66);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // Popup_Textbox
             // 
-            this.panel2.Location = new System.Drawing.Point(101, 7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(302, 72);
-            this.panel2.TabIndex = 1;
+            this.Popup_Textbox.BackColor = System.Drawing.SystemColors.Control;
+            this.Popup_Textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Popup_Textbox.Location = new System.Drawing.Point(3, 22);
+            this.Popup_Textbox.Name = "Popup_Textbox";
+            this.Popup_Textbox.ReadOnly = true;
+            this.Popup_Textbox.Size = new System.Drawing.Size(229, 20);
+            this.Popup_Textbox.TabIndex = 1;
+            this.Popup_Textbox.TabStop = false;
+            this.Popup_Textbox.Text = "dddd";
+            this.Popup_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(101, 85);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(302, 561);
-            this.panel3.TabIndex = 2;
-            // 
-            // MainScene
+            // Popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 650);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(259, 85);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "MainScene";
-            this.Text = "MainScene";
-            this.Load += new System.EventHandler(this.MainScene_Load);
+            this.Name = "Popup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Popup";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Popup_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -73,7 +75,6 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
+        private TextBox Popup_Textbox;
     }
 }
